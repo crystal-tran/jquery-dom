@@ -75,6 +75,27 @@
 <script src="https://unpkg.com/jquery"></script>
 <script>
   // Add your code here!
+
+$("article img").addClass("image-center");
+
+const $paragraph = $("p");
+$paragraph[$paragraph.length-1] .remove();
+
+// const $title = $("h1");
+
+function getRandomNumber(){
+  return Math.floor(Math.random() * (100+1))
+}
+
+$("h1").css("font-size", getRandomNumber());
+
+// const $list = $("ol");
+// const $newLi = $("<li>").text("Hello World");
+// $list.append($newLi);
+$("ol").append($("<li>").text("Hey something random"));
+
+
+
 </script>
 </body>
 

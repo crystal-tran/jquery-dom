@@ -98,12 +98,12 @@
 
     /**setBodyColor: setting background color from form inputs*/
     function setBodyColor(){
-      const $formInputs1 = $('.form-control:eq(0)');
-      const $formInputs2 = $('.form-control:eq(1)');
-      const $formInputs3 = $('.form-control:eq(2)');
+      const $formControl = $(".form-control");
+      const red = $formControl.eq(0).val();
+      const blue = $formControl.eq(1).val();
+      const green = $formControl.eq(2).val();
 
-      // return `rgb(${$formInputs[0].value}, ${$formInputs[1].value}, ${$formInputs[2].value})`;
-      const backgroundColorCSS = `rgb(${$formInputs1.val()}, ${$formInputs2.val()}, ${$formInputs3.val()})`;
+      const backgroundColorCSS = `rgb(${red}, ${blue}, ${green})`;
       console.log(backgroundColorCSS)
       $('body').css("background", backgroundColorCSS);
     }

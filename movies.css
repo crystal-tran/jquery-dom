@@ -1,0 +1,18 @@
+body {
+  background: rgb(157, 157, 207);
+}
+
+.title {
+  background: rgb(136, 136, 151);
+  display: flex;
+  justify-content: center;
+}
+
+.form-box {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 400px;
+}

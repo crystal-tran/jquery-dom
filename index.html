@@ -72,6 +72,7 @@
   </div>
   <script src="https://unpkg.com/jquery"></script>
   <script>
+    "use strict";
     // Add your code here!
 
     $("article img").addClass("image-center");
@@ -79,6 +80,7 @@
     const $paragraph = $("p");
     $paragraph[$paragraph.length - 1].remove();
 
+    /**Generate a random number between 0 and 100 */
     function getRandomNumber() {
       return Math.floor(Math.random() * (100 + 1));
     }
@@ -92,13 +94,16 @@
 
     $('.form-control').on('change', setBodyColor);
 
+    /**setBodyColor: setting background color from form inputs*/
     function setBodyColor(){
       const $formInputs = $('.form-control');
       // return `rgb(${$formInputs[0].value}, ${$formInputs[1].value}, ${$formInputs[2].value})`;
-      const backgroundColorCSS = `background-color: rgb(${$formInputs[0].value}, ${$formInputs[1].value}, ${$formInputs[2].value})`;
-      $('body').css(backgroundColorCSS);
+      const backgroundColorCSS = `rgb(${$formInputs[0].value}, ${$formInputs[1].value}, ${$formInputs[2].value})`;
+      //console.log(backgroundColorCSS)
+      $('body').css("background", backgroundColorCSS);
     }
 
+    $("article").on("click", ".image-center", () => $("article img").remove());
   </script>
 </body>
 

@@ -77,6 +77,7 @@
 
     $("article img").addClass("image-center");
 
+    //.last-child() method can be used here
     const $paragraph = $("p");
     $paragraph[$paragraph.length - 1].remove();
 
@@ -85,7 +86,8 @@
       return Math.floor(Math.random() * (100 + 1));
     }
 
-    $("h1").css("font-size", getRandomNumber());
+    //be more specific and use id
+    $("#title").css("font-size", getRandomNumber());
 
     $("ol").append($("<li>").text("Hey something random"));
 
@@ -96,14 +98,20 @@
 
     /**setBodyColor: setting background color from form inputs*/
     function setBodyColor(){
-      const $formInputs = $('.form-control');
+      const $formInputs1 = $('.form-control:eq(0)');
+      const $formInputs2 = $('.form-control:eq(1)');
+      const $formInputs3 = $('.form-control:eq(2)');
+
       // return `rgb(${$formInputs[0].value}, ${$formInputs[1].value}, ${$formInputs[2].value})`;
-      const backgroundColorCSS = `rgb(${$formInputs[0].value}, ${$formInputs[1].value}, ${$formInputs[2].value})`;
-      //console.log(backgroundColorCSS)
+      const backgroundColorCSS = `rgb(${$formInputs1.val()}, ${$formInputs2.val()}, ${$formInputs3.val()})`;
+      console.log(backgroundColorCSS)
       $('body').css("background", backgroundColorCSS);
     }
 
-    $("article").on("click", ".image-center", () => $("article img").remove());
+    //$("article").on("click", ".image-center", () => $("article img").remove());
+    $("img").on("click", function(evt) {
+      $(evt.target).remove();
+    })
   </script>
 </body>
 
